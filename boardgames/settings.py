@@ -36,7 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tictactoe'
+    'tictactoe',
+    'my_user'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,3 +83,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+LOGIN_URL = 'boardgames_login'
+LOGOUT_URL = 'boardgames_logout'
+LOGIN_REDIRECT_URL = 'my_user_home' # where to go after logging in

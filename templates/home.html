@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+	<html>
+        <div>
+        <ul class = "nav navbar-nav navbar-right">
+            <li><a href = "#">About</a><li>
+            <li><a href = "#">Contact</a><li>
+            {% if user.is_authenticated %}
+                <li><a href= "{% url 'boardgames_logout' %}">Logout</a><li>
+            {% else %}
+                <li><a href= "{% url 'boardgames_login' %}">Login</a><li>
+            {% endif %}
+        </ul>
+        </div>
+		<head>
+			<title>Geoffrey Bremner</title>
+		</head>
+		<body>
+			<h1>Hello everyone, welcome to my website</h1>
+            {%if user.is_authenticated%}
+            <p>Welcome, {{ user.username }}</p>
+            {%endif%}
+			<p>It is now {{date}}.</p>
+		</body>
+	</html>
